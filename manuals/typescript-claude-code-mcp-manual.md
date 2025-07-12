@@ -1,11 +1,11 @@
-# TypeScript Claude Code & MCP Integration Manual
-*A comprehensive guide for context engineering with Claude Code, focusing on TypeScript development, MCP servers, and intelligent automation*
+# Next.js 15 Claude Code & MCP Integration Manual
+*A comprehensive guide for context engineering with Claude Code, focusing on Next.js 15 App Router development, MCP servers, and intelligent automation*
 
 ## Table of Contents
 1. [Executive Summary](#executive-summary)
-2. [TypeScript Project Structure for Agentic Coding](#typescript-project-structure)
+2. [Next.js 15 Project Structure for Agentic Coding](#nextjs-project-structure)
 3. [Hooks Configuration with MCP Integration](#hooks-configuration)
-4. [Essential MCP Servers for TypeScript](#essential-mcp-servers)
+4. [Essential MCP Servers for Next.js](#essential-mcp-servers)
 5. [Headless Claude Code Automation](#headless-automation)
 6. [Complete Integration Example](#complete-example)
 7. [Best Practices & Troubleshooting](#best-practices)
@@ -14,143 +14,210 @@
 
 ## Executive Summary {#executive-summary}
 
-This manual provides a production-ready approach to context engineering with Claude Code for TypeScript projects. It covers:
-- **Optimal project structure** that maximizes Claude's understanding
+This manual provides a production-ready approach to context engineering with Claude Code for Next.js 15 projects. It covers:
+- **Optimal Next.js App Router structure** that maximizes Claude's understanding of server/client components
 - **Intelligent hooks** that integrate with MCP servers before code generation
-- **Essential MCP servers** for TypeScript development
-- **Headless automation** patterns for CI/CD integration
+- **Essential MCP servers** for Next.js full-stack development
+- **Headless automation** patterns for CI/CD integration with Vercel and GitHub
 
 ### Key Principle: Context Before Code
 > "LLMs don't know everything" - Use MCP servers to provide real-time context before Claude writes code.
 
 ---
 
-## TypeScript Project Structure for Agentic Coding {#typescript-project-structure}
+## Next.js 15 Project Structure for Agentic Coding {#nextjs-project-structure}
 
 ### 1. Directory Structure
 
 ```
-your-project/
+nextjs-project/
 ├── .claude/                    # Claude-specific configuration
 │   ├── settings.toml          # Hooks configuration
 │   ├── commands/              # Custom slash commands
 │   └── mcp-config.json        # MCP server configurations
 ├── .mcp.json                  # Project-level MCP config (version controlled)
 ├── CLAUDE.md                  # Project context document
-├── src/
-│   ├── core/                  # Core business logic
-│   │   ├── types/            # Shared TypeScript types
-│   │   ├── utils/            # Utility functions
-│   │   └── constants/        # Constants and enums
-│   ├── services/             # Service layer
-│   ├── api/                  # API endpoints
-│   └── tests/                # Test files
-├── scripts/                   # Build and automation scripts
-├── docs/                      # Documentation
+├── app/                       # Next.js 15 App Router
+│   ├── (auth)/               # Grouped routes requiring auth
+│   │   ├── dashboard/
+│   │   └── profile/
+│   ├── (public)/             # Public routes
+│   │   ├── page.tsx
+│   │   └── about/
+│   ├── api/                  # API routes
+│   │   └── [...]/route.ts
+│   ├── layout.tsx            # Root layout
+│   ├── error.tsx             # Error boundary
+│   └── global-error.tsx      # Global error boundary
+├── components/                # React components
+│   ├── ui/                   # UI components (buttons, cards, etc.)
+│   ├── features/             # Feature-specific components
+│   └── providers/            # Context providers
+├── lib/                      # Utility functions and helpers
+│   ├── actions/             # Server actions
+│   ├── db/                  # Database utilities
+│   └── utils/               # General utilities
+├── hooks/                    # Custom React hooks
+├── types/                    # TypeScript type definitions
+├── styles/                   # Global styles and themes
+├── public/                   # Static assets
+├── middleware.ts             # Next.js middleware
+├── next.config.ts            # Next.js configuration (TypeScript)
 ├── tsconfig.json             # TypeScript configuration
-├── package.json              # Dependencies and scripts
-└── .env.example              # Environment variables template
+├── tailwind.config.ts        # Tailwind configuration
+└── .env.local                # Environment variables
 ```
 
 ### 2. Essential CLAUDE.md Template
 
 ```markdown
-# CLAUDE.md - Project Context
+# CLAUDE.md - Next.js 15 Project Context
 
 ## Project Overview
 **Name**: [Your Project Name]
-**Type**: TypeScript Monorepo / Single Package
+**Type**: Next.js 15 App Router with TypeScript
 **Purpose**: [Brief description]
+**Deployment**: Vercel / Self-hosted
 
 ## Technology Stack
-- **Runtime**: Node.js 20.x LTS
+- **Framework**: Next.js 15.x (App Router)
 - **Language**: TypeScript 5.x (strict mode)
-- **Package Manager**: pnpm / yarn / npm
-- **Testing**: Jest / Vitest
-- **Linting**: ESLint + Prettier
-- **Build Tool**: esbuild / tsc / webpack
+- **Styling**: Tailwind CSS / CSS Modules
+- **Database**: Prisma / Drizzle with PostgreSQL
+- **Authentication**: NextAuth.js / Clerk
+- **State Management**: Zustand / TanStack Query
+- **Testing**: Jest + React Testing Library + Playwright
+- **Package Manager**: pnpm (recommended) / npm / yarn
 
 ## Critical Commands
 ```bash
 # Development
-pnpm dev              # Start development server
-pnpm build            # Build for production
-pnpm test             # Run all tests
-pnpm test:watch       # Run tests in watch mode
-pnpm lint             # Lint and format code
+pnpm dev              # Start Next.js dev server (port 3000)
+pnpm build            # Production build
+pnpm start            # Start production server
+pnpm lint             # Run ESLint
 pnpm typecheck        # Run TypeScript compiler
-pnpm validate         # Run all checks (lint + test + typecheck)
+pnpm test             # Run unit tests
+pnpm test:e2e         # Run Playwright E2E tests
+pnpm db:push          # Push schema changes to database
+pnpm db:studio        # Open Prisma Studio
 
 # Code Quality (These run automatically via hooks!)
 pnpm format           # Format with Prettier
 pnpm lint:fix         # Fix linting issues
 ```
 
-## Architecture Patterns
-1. **Dependency Injection**: Use tsyringe for IoC
-2. **Error Handling**: Custom error classes extending BaseError
-3. **Validation**: Zod schemas for runtime validation
-4. **Logging**: Structured logging with pino
-5. **API Design**: RESTful with OpenAPI documentation
+## Next.js 15 Architecture
+
+### Server Components vs Client Components
+- **Default to Server Components** - All components are server by default
+- Use `"use client"` directive only when needed:
+  - Interactive elements (onClick, onChange)
+  - Browser APIs (window, localStorage)
+  - React hooks (useState, useEffect)
+  - Third-party client libraries
+
+### App Router Conventions
+- `page.tsx` - Page component
+- `layout.tsx` - Shared layout
+- `loading.tsx` - Loading UI
+- `error.tsx` - Error boundary
+- `not-found.tsx` - 404 page
+- `route.ts` - API route handler
+- `middleware.ts` - Request middleware
+
+### Data Fetching Patterns
+1. **Server Components**: Fetch directly in components
+2. **Server Actions**: Form mutations and data updates
+3. **Route Handlers**: RESTful API endpoints
+4. **Parallel Data Loading**: Use Promise.all()
+5. **Streaming**: Use Suspense boundaries
 
 ## Project Conventions
-- **File Naming**: kebab-case for files, PascalCase for components
-- **Imports**: Absolute imports via @/ alias
-- **Types**: Colocate types with implementation
-- **Tests**: *.test.ts files adjacent to source
-- **Async**: Always use async/await, no raw promises
-- **Comments**: JSDoc for public APIs only
+- **Components**: PascalCase, colocated with usage
+- **Server Actions**: Prefix with "action" (e.g., `actionCreateUser`)
+- **API Routes**: RESTful naming `/api/users/[id]`
+- **Types**: Dedicated types/ folder, use .d.ts for declarations
+- **Styles**: CSS Modules for component styles, Tailwind for utilities
+- **Images**: Use next/image, store in public/images
+
+## Server Actions Best Practices
+```typescript
+// Always mark with "use server"
+"use server"
+
+// Return typed responses
+export async function actionCreatePost(data: FormData) {
+  // Validate with zod
+  const validated = postSchema.parse(Object.fromEntries(data))
+  
+  // Perform action
+  const post = await db.post.create({ data: validated })
+  
+  // Revalidate cache
+  revalidatePath('/posts')
+  
+  return { success: true, data: post }
+}
+```
 
 ## MCP Context Sources
 The following MCP servers provide real-time context:
-- **context7**: Latest library documentation
+- **context7**: Latest Next.js/React documentation
 - **github**: Repository issues and PRs
 - **database**: Current schema and migrations
+- **vercel**: Deployment status and analytics
 - **npm-registry**: Package version information
 
-## Known Issues / Gotchas
-- [List any project-specific quirks]
-- [Environment-specific considerations]
-- [Third-party API limitations]
+## Common Pitfalls to Avoid
+- Don't use `"use client"` unnecessarily
+- Avoid large client bundles - split code
+- Don't fetch data in client components
+- Remember: metadata is server-only
+- Use dynamic imports for heavy client libraries
 ```
 
-### 3. TypeScript Configuration
+### 3. Next.js TypeScript Configuration
 
 ```json
 // tsconfig.json
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["ES2022"],
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "allowJs": false,
-    "noEmit": false,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "allowSyntheticDefaultImports": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@core/*": ["./src/core/*"],
-      "@services/*": ["./src/services/*"],
-      "@api/*": ["./src/api/*"],
-      "@types/*": ["./src/core/types/*"]
+      "@/*": ["./*"],
+      "@/components/*": ["./components/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/types/*": ["./types/*"],
+      "@/app/*": ["./app/*"],
+      "@/styles/*": ["./styles/*"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
 }
 ```
 
@@ -166,36 +233,46 @@ Before Claude writes any code, hooks should gather context from MCP servers to e
 ```toml
 # .claude/settings.toml
 
-# Pre-code generation: Fetch context from MCP servers
+# Pre-code generation: Fetch Next.js/React context from MCP servers
 [[hooks]]
 event = "PreToolUse"
 [hooks.matcher]
 tool_name = "edit_file"
 file_paths = ["*.ts", "*.tsx"]
 command = """
-# Fetch latest TypeScript/library docs before editing
-claude-code -p "Use Context7 to get the latest documentation for the libraries imported in $CLAUDE_FILE_PATHS" --headless
+# Determine if file is server or client component
+if grep -q '"use client"' "$CLAUDE_FILE_PATHS"; then
+  echo "🔍 Client component detected"
+  claude-code -p "Use Context7 to get React hooks and client-side patterns for the libraries in $CLAUDE_FILE_PATHS" --headless
+else
+  echo "🔍 Server component detected"
+  claude-code -p "Use Context7 to get Next.js 15 server component patterns and data fetching best practices" --headless
+fi
 
-# Check for existing patterns in codebase
-grep -r "similar patterns" src/ || true
+# Check for similar components
+find app components -name "*.tsx" -type f | head -20
 """
 
-# Post-edit: Validate and format
+# Post-edit: Next.js-specific validation and format
 [[hooks]]
 event = "PostToolUse"
 [hooks.matcher]
 tool_name = "edit_file"
 file_paths = ["*.ts", "*.tsx"]
 command = """
-# Type checking first
+# Next.js build check (catches server/client issues)
+npx next lint $CLAUDE_FILE_PATHS
+
+# Type checking
 npx tsc --noEmit --pretty
 
-# Linting and formatting
-npx eslint --fix $CLAUDE_FILE_PATHS
+# Formatting
 npx prettier --write $CLAUDE_FILE_PATHS
 
-# Run affected tests
-npx jest --findRelatedTests $CLAUDE_FILE_PATHS --passWithNoTests
+# Run component tests if they exist
+if [ -f "${CLAUDE_FILE_PATHS%.tsx}.test.tsx" ]; then
+  npx jest "${CLAUDE_FILE_PATHS%.tsx}.test.tsx" --passWithNoTests
+fi
 """
 
 # Pre-commit validation
@@ -209,31 +286,50 @@ if git diff --cached --name-only | grep -q '\\.ts'; then
 fi
 """
 
-# Smart documentation updates
+# Server Action validation
 [[hooks]]
-event = "PostToolUse"
+event = "PreToolUse"
 [hooks.matcher]
 tool_name = "edit_file"
-file_paths = ["src/**/*.ts"]
-run_in_background = true
+file_paths = ["**/actions/*.ts", "app/**/actions.ts"]
 command = """
-# Extract and update API documentation
-npx typedoc --json .claude/api-docs.json
-claude-code -p "Update the API section in CLAUDE.md based on .claude/api-docs.json" --headless
+# Ensure server actions are properly configured
+if ! grep -q '"use server"' "$CLAUDE_FILE_PATHS"; then
+  echo "⚠️  Warning: Server action file missing 'use server' directive"
+  exit 2
+fi
+
+# Get server action best practices
+claude-code -p "Use context7 to get Next.js 15 server actions best practices" --headless
 """
 
-# MCP-powered code review
+# Route handler validation
+[[hooks]]
+event = "PreToolUse"
+[hooks.matcher]
+tool_name = "edit_file"
+file_paths = ["**/route.ts", "**/route.js"]
+command = """
+# Check route handler patterns
+echo "🔍 Validating API route handler..."
+claude-code -p "Use context7 to verify Next.js 15 route handler patterns for $CLAUDE_FILE_PATHS" --headless
+"""
+
+# MCP-powered component creation
 [[hooks]]
 event = "PreToolUse"
 [hooks.matcher]
 tool_name = "create_file"
+file_paths = ["**/*.tsx"]
 command = """
-# Check if similar files exist
-echo "🔍 Checking for similar implementations..."
-claude-code -p "Use github MCP to search for similar file patterns in this repo" --headless
-
-# Get best practices from Context7
-claude-code -p "Use context7 to get best practices for the file type being created" --headless
+# Determine component type from path
+if [[ "$CLAUDE_FILE_PATHS" == *"app/"* ]]; then
+  echo "📄 Creating page/layout component"
+  claude-code -p "Use context7 for Next.js 15 page/layout conventions" --headless
+else
+  echo "🧩 Creating reusable component"
+  claude-code -p "Use github MCP to find similar component patterns in this repo" --headless
+fi
 """
 ```
 
@@ -242,45 +338,70 @@ claude-code -p "Use context7 to get best practices for the file type being creat
 ```toml
 # Advanced MCP-powered hooks
 
-# Database schema validation
+# Prisma/Drizzle schema validation
 [[hooks]]
 event = "PreToolUse"
 [hooks.matcher]
 tool_name = "edit_file"
-file_paths = ["**/models/*.ts", "**/entities/*.ts"]
+file_paths = ["**/schema.prisma", "**/schema/*.ts", "lib/db/*.ts"]
 command = """
-# Fetch current database schema
-claude-code -p "Use database MCP to get current schema" --output-format json > .claude/current-schema.json
-
-# Validate against schema
-node scripts/validate-schema.js $CLAUDE_FILE_PATHS .claude/current-schema.json || exit 2
+# Validate database schema changes
+if [[ "$CLAUDE_FILE_PATHS" == *"schema.prisma" ]]; then
+  echo "🔍 Validating Prisma schema..."
+  npx prisma validate
+else
+  echo "🔍 Checking Drizzle schema..."
+  claude-code -p "Use database MCP to validate schema compatibility" --headless
+fi
 """
 
-# API compatibility check
+# Next.js API route validation
 [[hooks]]
 event = "PreToolUse"
 [hooks.matcher]
 tool_name = "edit_file"
-file_paths = ["**/api/**/*.ts"]
+file_paths = ["app/api/**/route.ts"]
 command = """
-# Check API breaking changes
-claude-code -p "Use openapi MCP to validate API compatibility" --headless
+# Validate API route exports
+echo "🔍 Checking API route handlers..."
+
+# Ensure proper HTTP method exports
+if ! grep -E "(GET|POST|PUT|DELETE|PATCH)" "$CLAUDE_FILE_PATHS"; then
+  echo "⚠️  Warning: No HTTP method handlers found"
+fi
+
+# Get API best practices
+claude-code -p "Use context7 for Next.js 15 API route patterns" --headless
 """
 
-# Security scanning
+# Vercel deployment checks
 [[hooks]]
 event = "PostToolUse"
 run_in_background = true
 command = """
-# Run security checks in background
-npm audit
-npx snyk test
+# Run Next.js production build check
+npx next build --no-lint || echo "⚠️  Build check failed"
+
+# Check bundle size
+npx @next/bundle-analyzer || true
+"""
+
+# Middleware validation
+[[hooks]]
+event = "PreToolUse"
+[hooks.matcher]
+tool_name = "edit_file"
+file_paths = ["middleware.ts", "middleware.js"]
+command = """
+# Validate Next.js middleware patterns
+echo "🔍 Checking middleware configuration..."
+claude-code -p "Use context7 to verify Next.js 15 middleware patterns and edge runtime compatibility" --headless
 """
 ```
 
 ---
 
-## Essential MCP Servers for TypeScript {#essential-mcp-servers}
+## Essential MCP Servers for Next.js {#essential-mcp-servers}
 
 ### 1. Context7 - Real-time Documentation
 ```json
@@ -294,10 +415,11 @@ npx snyk test
 ```
 
 **Use Cases**:
-- Get latest React hooks documentation
-- TypeScript utility types reference
-- Node.js API updates
-- Framework-specific patterns
+- Get latest Next.js 15 App Router patterns
+- React Server Components documentation
+- Server Actions best practices
+- Suspense and streaming patterns
+- Next.js-specific TypeScript types
 
 ### 2. GitHub MCP - Repository Intelligence
 ```json
@@ -388,14 +510,53 @@ npx snyk test
     "command": "npx",
     "args": ["-y", "@modelcontextprotocol/server-filesystem"],
     "config": {
-      "allowedPaths": ["./src", "./tests", "./docs"]
+      "allowedPaths": ["./app", "./components", "./lib", "./public"]
     },
     "description": "Advanced file operations"
   }
 }
 ```
 
-### Complete .mcp.json Configuration
+### 8. Vercel MCP - Deployment & Analytics
+```json
+{
+  "vercel": {
+    "command": "npx",
+    "args": ["-y", "vercel-mcp-server"],
+    "env": {
+      "VERCEL_TOKEN": "${VERCEL_TOKEN}"
+    },
+    "description": "Deployment status, analytics, and edge functions"
+  }
+}
+```
+
+**Use Cases**:
+- Check deployment status
+- View Core Web Vitals
+- Monitor edge function performance
+- Preview deployments
+- Analytics insights
+
+### 9. Next.js MCP - Framework Intelligence
+```json
+{
+  "nextjs": {
+    "command": "npx",
+    "args": ["-y", "next-mcp-server"],
+    "description": "Next.js-specific development assistance"
+  }
+}
+```
+
+**Use Cases**:
+- Route structure analysis
+- Build optimization suggestions
+- Performance recommendations
+- Config validation
+- Best practices enforcement
+
+### Complete .mcp.json Configuration for Next.js
 ```json
 {
   "mcpServers": {
@@ -427,6 +588,17 @@ npx snyk test
       "config": {
         "specPath": "./openapi.yaml"
       }
+    },
+    "vercel": {
+      "command": "npx",
+      "args": ["-y", "vercel-mcp-server"],
+      "env": {
+        "VERCEL_TOKEN": "${VERCEL_TOKEN}"
+      }
+    },
+    "nextjs": {
+      "command": "npx",
+      "args": ["-y", "next-mcp-server"]
     }
   }
 }
@@ -436,17 +608,22 @@ npx snyk test
 
 ## Headless Claude Code Automation {#headless-automation}
 
-### 1. Basic Headless Usage
+### 1. Basic Headless Usage for Next.js
 ```bash
 # Simple headless command
-claude-code -p "Fix all TypeScript errors" --headless
+claude-code -p "Convert this page component to use server actions" --headless
 
-# With JSON output for parsing
-claude-code -p "List all TODO comments" --output-format json --headless
+# Check for client/server component issues
+claude-code -p "Analyze app/ directory for unnecessary client components" --output-format json --headless
 
-# With specific context
-claude-code -p "Update the user service to use dependency injection" \
-  --context "Use tsyringe for DI implementation" \
+# Optimize data fetching
+claude-code -p "Update dashboard page to use parallel data fetching with Promise.all" \
+  --context "Use Next.js 15 best practices for server components" \
+  --headless
+
+# Generate API route from schema
+claude-code -p "Create a Next.js API route for the User model with full CRUD operations" \
+  --context "Use app/api/users/route.ts pattern" \
   --headless
 ```
 
@@ -492,146 +669,149 @@ jobs:
             });
 ```
 
-### 3. Headless Hook Patterns
+### 3. Next.js-Specific Headless Patterns
 
 ```bash
 #!/bin/bash
-# scripts/smart-refactor.sh
+# scripts/optimize-nextjs.sh
 
-# Use Claude headlessly to analyze before refactoring
-ANALYSIS=$(claude-code -p "Analyze src/ for refactoring opportunities" \
+# Analyze and optimize client components
+echo "🔍 Analyzing component usage..."
+COMPONENTS=$(claude-code -p "List all components that could be converted to server components" \
   --output-format json --headless)
 
-# Parse analysis and create tasks
-echo "$ANALYSIS" | jq -r '.refactoring_tasks[]' | while read task; do
-  claude-code -p "Refactor: $task" --headless
+# Convert each component
+echo "$COMPONENTS" | jq -r '.components[]' | while read component; do
+  claude-code -p "Convert $component to server component if possible" --headless
   
-  # Run tests after each refactor
-  npm test || {
-    echo "Tests failed after refactoring: $task"
+  # Verify build still works
+  npx next build || {
+    echo "Build failed after converting: $component"
     git checkout -- .
     exit 1
   }
-  
-  git add -A
-  git commit -m "Refactor: $task"
 done
+
+# Optimize images
+claude-code -p "Find all img tags and convert to next/image with proper sizing" --headless
+
+# Generate sitemap
+claude-code -p "Create app/sitemap.ts based on current routes" --headless
 ```
 
 ### 4. MCP + Headless Workflows
 
 ```bash
-# Pre-code context gathering
-claude-code -p "Use context7 to get React 18 concurrent features docs" --headless > .claude/react-docs.md
-claude-code -p "Use github to find similar component implementations" --headless > .claude/similar-components.md
+# Pre-code context gathering for Next.js
+claude-code -p "Use context7 to get Next.js 15 server components and data fetching patterns" --headless > .claude/nextjs-patterns.md
+claude-code -p "Use vercel MCP to check current Core Web Vitals and performance metrics" --headless > .claude/performance-baseline.md
+claude-code -p "Use github to find similar page implementations in this repo" --headless > .claude/similar-pages.md
 
-# Now generate code with full context
-claude-code -p "Implement a concurrent-mode compatible data fetching component using the context from .claude/"
+# Now generate optimized page with full context
+claude-code -p "Create a dashboard page using patterns from .claude/ that optimizes for Core Web Vitals"
+
+# Verify deployment readiness
+claude-code -p "Use vercel MCP to validate deployment configuration" --headless
 ```
 
 ---
 
 ## Complete Integration Example {#complete-example}
 
-### Project Setup Script
+### Next.js 15 Project Setup Script
 ```bash
 #!/bin/bash
-# setup-claude-typescript-project.sh
+# setup-claude-nextjs-project.sh
 
 PROJECT_NAME=$1
 
-# Create project structure
-mkdir -p $PROJECT_NAME/{src/{core/{types,utils,constants},services,api,tests},scripts,docs,.claude/commands}
+# Create Next.js project with TypeScript
+npx create-next-app@latest $PROJECT_NAME \
+  --typescript \
+  --tailwind \
+  --app \
+  --no-src-dir \
+  --import-alias "@/*"
+
 cd $PROJECT_NAME
 
-# Initialize package.json
-cat > package.json << 'EOF'
-{
-  "name": "@your-org/your-project",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc && tsc-alias",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "format": "prettier --write .",
-    "typecheck": "tsc --noEmit",
-    "validate": "npm run typecheck && npm run lint && npm run test"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.0.0",
-    "tsx": "^4.0.0",
-    "jest": "^29.0.0",
-    "@types/jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "eslint": "^8.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "prettier": "^3.0.0",
-    "tsc-alias": "^1.8.0"
-  }
-}
-EOF
+# Create additional directories
+mkdir -p {components/{ui,features,providers},lib/{actions,db,utils},hooks,types,.claude/commands}
 
-# Create tsconfig.json
-cat > tsconfig.json << 'EOF'
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["ES2022"],
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@/*": ["./src/*"],
-      "@core/*": ["./src/core/*"],
-      "@services/*": ["./src/services/*"],
-      "@api/*": ["./src/api/*"]
-    }
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+# Update package.json with additional scripts
+npm pkg set scripts.typecheck="tsc --noEmit"
+npm pkg set scripts.db:push="prisma db push"
+npm pkg set scripts.db:studio="prisma studio"
+npm pkg set scripts.test:e2e="playwright test"
+npm pkg set scripts.analyze="ANALYZE=true next build"
+npm pkg set scripts.validate="npm run typecheck && npm run lint && npm run test"
+
+# Install additional dependencies
+npm install -D @types/node prisma @prisma/client zod react-hook-form @hookform/resolvers
+npm install -D jest @testing-library/react @testing-library/jest-dom @playwright/test
+npm install zustand @tanstack/react-query lucide-react
+
+# Setup Prisma
+npx prisma init
+
+# Create middleware.ts
+cat > middleware.ts << 'EOF'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+
+export function middleware(request: NextRequest) {
+  // Add authentication check here
+  return NextResponse.next()
+}
+
+export const config = {
+  matcher: ['/dashboard/:path*', '/api/:path*']
 }
 EOF
 
 # Create CLAUDE.md
 cat > CLAUDE.md << 'EOF'
-# CLAUDE.md - TypeScript Project Context
+# CLAUDE.md - Next.js 15 Project Context
 
 ## Project Overview
-**Name**: TypeScript Claude Code Project
-**Purpose**: Modern TypeScript application with full Claude Code integration
+**Name**: Next.js 15 Claude Code Project
+**Framework**: Next.js 15 with App Router
+**Deployment**: Vercel
 
 ## Technology Stack
-- Node.js 20.x LTS
+- Next.js 15.x (App Router)
 - TypeScript 5.x (strict mode)
-- Jest for testing
-- ESLint + Prettier
-- MCP servers for context
+- Tailwind CSS
+- Prisma ORM
+- React Query
+- Zustand
 
 ## Commands
 \`\`\`bash
-npm run dev       # Start development
-npm run build     # Build project
+npm run dev       # Start development server
+npm run build     # Production build
+npm run start     # Start production server
+npm run lint      # Run ESLint
+npm run typecheck # TypeScript check
 npm run test      # Run tests
+npm run test:e2e  # Run E2E tests
+npm run db:push   # Push schema to database
 npm run validate  # Run all checks
 \`\`\`
 
+## App Router Structure
+- Server Components by default
+- Use "use client" only when needed
+- Server Actions for mutations
+- Parallel data fetching
+- Streaming with Suspense
+
 ## MCP Servers Available
-- context7: Documentation lookup
+- context7: Next.js/React docs
 - github: Repository intelligence
 - database: Schema validation
-- npm-registry: Package info
+- vercel: Deployment status
+- nextjs: Framework assistance
 EOF
 
 # Create .mcp.json
@@ -661,42 +841,138 @@ event = "PreToolUse"
 [hooks.matcher]
 tool_name = "edit_file"
 file_paths = ["*.ts", "*.tsx"]
-command = "claude-code -p 'Use context7 to check latest TypeScript patterns' --headless"
+command = """
+if grep -q '"use client"' "$CLAUDE_FILE_PATHS"; then
+  claude-code -p "Use context7 for React client patterns" --headless
+else
+  claude-code -p "Use context7 for Next.js 15 server patterns" --headless
+fi
+"""
 
 [[hooks]]
 event = "PostToolUse"
 [hooks.matcher]
 tool_name = "edit_file"
 file_paths = ["*.ts", "*.tsx"]
-command = "npx tsc --noEmit && npx eslint --fix $CLAUDE_FILE_PATHS"
+command = "npx next lint $CLAUDE_FILE_PATHS && npx prettier --write $CLAUDE_FILE_PATHS"
+
+[[hooks]]
+event = "PreToolUse"
+[hooks.matcher]
+tool_name = "edit_file"
+file_paths = ["app/**/route.ts"]
+command = "claude-code -p 'Use context7 for Next.js 15 API route patterns' --headless"
 EOF
 
-# Create a sample custom command
-cat > .claude/commands/create-service.md << 'EOF'
+# Create Next.js-specific custom commands
+cat > .claude/commands/create-page.md << 'EOF'
 ---
-name: create-service
-description: Create a new service with full test coverage
+name: create-page
+description: Create a new Next.js page with proper structure
 ---
 
-Create a new TypeScript service with the following:
-1. Use dependency injection pattern
-2. Include comprehensive error handling
-3. Add full test coverage
-4. Create interface first, then implementation
-5. Add JSDoc documentation
-6. Follow project conventions in CLAUDE.md
+Create a new Next.js page component with:
+1. Proper server/client component separation
+2. Loading and error boundaries
+3. Metadata for SEO
+4. Proper data fetching patterns
+5. TypeScript types
+6. Tailwind styling
 
-Service name: $ARGUMENTS
+Page route: $ARGUMENTS
+EOF
+
+cat > .claude/commands/create-server-action.md << 'EOF'
+---
+name: create-server-action
+description: Create a new server action with validation
+---
+
+Create a new Next.js server action with:
+1. "use server" directive
+2. Zod schema validation
+3. Proper error handling
+4. Type-safe return values
+5. Database transaction if needed
+6. Cache revalidation
+
+Action name: $ARGUMENTS
+EOF
+
+# Create sample server action
+mkdir -p lib/actions
+cat > lib/actions/example.ts << 'EOF'
+"use server"
+
+import { z } from 'zod'
+import { revalidatePath } from 'next/cache'
+
+const schema = z.object({
+  name: z.string().min(1),
+  email: z.string().email()
+})
+
+export async function actionCreateUser(formData: FormData) {
+  const validated = schema.parse({
+    name: formData.get('name'),
+    email: formData.get('email')
+  })
+  
+  // Add your logic here
+  
+  revalidatePath('/')
+  return { success: true }
+}
 EOF
 
 # Initialize git
 git init
-echo "node_modules/\ndist/\n.env\n.env.local" > .gitignore
+cat > .gitignore << 'EOF'
+# Dependencies
+node_modules
+.pnp
+.pnp.js
 
-# Install dependencies
-npm install
+# Testing
+coverage
+.nyc_output
 
-echo "✅ Project setup complete! Run 'claude-code' to start coding."
+# Next.js
+.next/
+out/
+build
+
+# Production
+dist
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Claude
+.claude/cache
+EOF
+
+echo "✅ Next.js 15 project setup complete! Run 'claude-code' to start coding."
 ```
 
 ---
@@ -795,16 +1071,28 @@ claude-code -p "Use context7 to get React docs" --cache-duration 3600
 
 ## Conclusion
 
-This manual provides a comprehensive approach to context engineering with Claude Code for TypeScript projects. The key insight is using MCP servers to provide real-time context *before* code generation, combined with intelligent hooks for automation.
+This manual provides a comprehensive approach to context engineering with Claude Code for Next.js 15 projects. The key insights are:
 
-Remember: **Context is everything**. The better you provide context through MCP servers, CLAUDE.md, and hooks, the better Claude Code performs.
+1. **Server-First Architecture**: Leverage Next.js 15's server components by default, using client components only when necessary
+2. **Context Before Code**: Use MCP servers (especially Context7 and Vercel) to provide real-time framework documentation before code generation
+3. **Intelligent Automation**: Hooks that understand the difference between server and client components, automatically applying appropriate patterns
+
+Remember: **Context is everything**. The better you provide Next.js-specific context through MCP servers, CLAUDE.md, and hooks, the better Claude Code performs.
 
 ### Quick Start Checklist
-- [ ] Create optimal project structure
-- [ ] Set up CLAUDE.md with project context
-- [ ] Configure .mcp.json with essential servers
-- [ ] Create .claude/settings.toml with smart hooks
-- [ ] Test headless commands for automation
-- [ ] Implement custom commands for workflows
+- [ ] Create Next.js 15 project with App Router
+- [ ] Set up CLAUDE.md with Next.js conventions
+- [ ] Configure .mcp.json with Context7, Vercel, and Next.js servers
+- [ ] Create .claude/settings.toml with server/client-aware hooks
+- [ ] Test headless commands for component optimization
+- [ ] Implement custom commands for pages and server actions
+
+### Next.js-Specific Tips
+- Always start with server components
+- Use Server Actions for mutations
+- Implement proper loading/error boundaries
+- Optimize for Core Web Vitals
+- Leverage parallel data fetching
+- Use Suspense for better UX
 
 *Last updated: January 2025*
