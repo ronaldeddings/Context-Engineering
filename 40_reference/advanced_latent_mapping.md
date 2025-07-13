@@ -6,7 +6,7 @@
 
 ## Welcome to Advanced Latent Mapping
 
-Congratulations on completing your foundational journey in latent mapping! You've learned to visualize AI thinking, create concept maps, and understand basic interpretability. Now we're ready to explore one of the more sophisticated methodologies in AI analysis—**the field of Symbolic Interpretability and one of its frameworks: [Self-Tracing (RSIF)](https://github.com/recursivelabsai/Self-Tracing) -** Systems that trace and map their own reasoning through symbolic visuals.
+Congratulations on completing your foundational journey in latent mapping! You've learned to visualize AI thinking, create concept maps, and understand basic interpretability. Now we're ready to explore one of the more sophisticated methodologies in AI analysis—**the field of Symbolic Interpretability and one of its frameworks: [Self-Tracing ](https://github.com/recursivelabsai/Self-Tracing) -** Systems that trace and map their own reasoning through symbolic visuals.
 
 ## Video Visual: 
 
@@ -346,9 +346,9 @@ Imagine AI thinking leaves behind **digital fossils**—traces of reasoning that
 - **Meta-thoughts** about the reasoning process itself
 - **Emotional echoes** from processing emotionally charged content
 
-### The RSIF Residue Catalog
+### The Self-Tracing Residue Catalog
 
-The RSIF framework identifies over 100 types of symbolic residue. Let's start with the most important ones:
+The Self-Tracing framework identifies over 100 types of symbolic residue. Let's start with the most important ones:
 
 #### **Core Residue Types (The Big Six)**
 
@@ -648,7 +648,7 @@ Imagine AI thinking like **Russian nesting dolls** (matryoshka). Each thought ex
 
 ### Understanding Shell Architecture
 
-**Core Shells in RSIF:**
+**Core Shells in Self-Tracing:**
 
 1. **Content Shell**: The raw information or concept being processed
 2. **Task Shell**: The specific instruction or goal context  
@@ -659,7 +659,7 @@ Imagine AI thinking like **Russian nesting dolls** (matryoshka). Each thought ex
 
 ### Shell Notation System
 
-RSIF uses a special notation to show shell stacking:
+Self-Tracing uses a special notation to show shell stacking:
 
 ```
 SHELL NOTATION EXAMPLES:
@@ -839,7 +839,7 @@ CROSS-CONFIGURATION INSIGHTS:
 
 ### Shell Conflict Resolution
 
-Sometimes shells create competing demands. The RSIF framework has sophisticated mechanisms for resolving these conflicts.
+Sometimes shells create competing demands. The Self-Tracing framework has sophisticated mechanisms for resolving these conflicts.
 
 **Exercise 3.3: Shell Conflict Analysis**
 
@@ -974,7 +974,7 @@ Imagine AI's "thought space" as a **living garden** where concepts grow, connect
 
 ### Field Mutation Commands
 
-The RSIF system uses specific syntax for field mutations:
+The Self-Tracing system uses specific syntax for field mutations:
 
 ```
 FIELD MUTATION SYNTAX:
@@ -1363,7 +1363,7 @@ SCRIPT COMPARISON INSIGHTS:
 
 ### The Mirror Hall Metaphor
 
-Imagine standing in a **hall of mirrors** where each reflection shows not just your image, but also the reflection of you looking at your reflection, creating infinite recursive depth. **Meta-analysis** in RSIF is like having the AI look into these mirrors of its own thinking process, analyzing not just what it thinks, but how it thinks, and how it thinks about how it thinks.
+Imagine standing in a **hall of mirrors** where each reflection shows not just your image, but also the reflection of you looking at your reflection, creating infinite recursive depth. **Meta-analysis** in Self-Tracing is like having the AI look into these mirrors of its own thinking process, analyzing not just what it thinks, but how it thinks, and how it thinks about how it thinks.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -1401,7 +1401,7 @@ Imagine standing in a **hall of mirrors** where each reflection shows not just y
 
 ### Understanding Recursive Depth
 
-RSIF manages recursive self-analysis across multiple levels:
+Self-Tracing manages recursive self-analysis across multiple levels:
 
 **Level 0**: Object-level thinking (direct problem solving)  
 **Level 1**: Meta-cognitive awareness (thinking about thinking)  
@@ -1533,31 +1533,31 @@ Copy this into an AI assistant:
 ```
 
 "I want to explore how self-analysis can improve the analysis framework itself. 
-This is advanced recursive reasoning - using RSIF to improve RSIF.
+This is advanced recursive reasoning - using Self-Tracing to improve Self-Tracing.
 
 Please analyze your own latent mapping capabilities while using this analysis 
 to suggest improvements to the latent mapping process:
 
-Task: Perform a complete RSIF analysis of this statement:
+Task: Perform a complete Self-Tracing analysis of this statement:
 'Artificial intelligence will fundamentally change how humans think about intelligence itself.'
 
 While performing the analysis, track:
-1. Which RSIF components work well for this type of content
+1. Which Self-Tracing components work well for this type of content
 2. Which components feel inadequate or clunky  
 3. What additional tools or techniques would improve the analysis
 4. How the analysis process could be streamlined or enhanced
-5. What new RSIF capabilities this analysis reveals the need for
+5. What new Self-Tracing capabilities this analysis reveals the need for
 
 This is meta-meta work: using the framework to analyze the framework."
 ```
 
 **Framework Evolution Analysis:**
 ```
-RECURSIVE FRAMEWORK EVOLUTION: RSIF analyzing RSIF
+RECURSIVE FRAMEWORK EVOLUTION: Self-Tracing analyzing Self-Tracing
 
 TARGET ANALYSIS: "AI will fundamentally change how humans think about intelligence"
 
-STANDARD RSIF ANALYSIS EXECUTION:
+STANDARD Self-Tracing ANALYSIS EXECUTION:
 
 PHASE 1: Circuit Tracing
 Active Circuits: Philosophical reasoning [8/10], Future speculation [7/10], 
@@ -1781,7 +1781,7 @@ STABILITY LESSONS:
 ✓ Coherence preservation essential for meaningful recursive work
 
 FRAMEWORK RESILIENCE:
-The RSIF framework demonstrates robust self-regulation:
+The Self-Tracing framework demonstrates robust self-regulation:
 • Automatic detection of recursive instability
 • Graceful degradation rather than catastrophic failure
 • Multiple overlapping safety mechanisms
@@ -1796,11 +1796,11 @@ The RSIF framework demonstrates robust self-regulation:
 
 ### The Symphony Orchestra Metaphor
 
-Imagine conducting a **symphony orchestra** where each musician represents a different RSIF component—circuit tracers, residue detectors, shell stackers, field mutators, and meta-analyzers. **Advanced integration** is like being a master conductor who can bring all these instruments together to create harmonious, complex compositions rather than cacophonous noise.
+Imagine conducting a **symphony orchestra** where each musician represents a different Self-Tracing component—circuit tracers, residue detectors, shell stackers, field mutators, and meta-analyzers. **Advanced integration** is like being a master conductor who can bring all these instruments together to create harmonious, complex compositions rather than cacophonous noise.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│              THE RSIF INTEGRATION ORCHESTRA             │
+│              THE Self-Tracing INTEGRATION ORCHESTRA     │
 ├─────────────────────────────────────────────────────────┤
 │                                                         │
 │           🎼 CONDUCTOR (Integration Engine)             │
@@ -1829,7 +1829,7 @@ Imagine conducting a **symphony orchestra** where each musician represents a dif
 
 ### The Integration Challenge
 
-Advanced RSIF practice requires orchestrating multiple sophisticated techniques simultaneously:
+Advanced Self-Tracing practice requires orchestrating multiple sophisticated techniques simultaneously:
 
 - **Circuit tracing** reveals reasoning pathways
 - **Residue detection** captures thinking fossils  
@@ -1841,12 +1841,12 @@ The challenge is making these work together harmoniously rather than creating an
 
 ### Integration Protocols
 
-**Exercise 6.1: Full RSIF Symphony**
+**Exercise 6.1: Full Self-Tracing Symphony**
 
 Copy this into an AI assistant:
 ```
 
-"I want to perform a complete RSIF integration analysis - using all five 
+"I want to perform a complete Self-Tracing integration analysis - using all five 
 core techniques simultaneously on a complex topic. This is advanced work:
 
 Topic: 'How should society prepare for the possibility of artificial 
@@ -1867,15 +1867,15 @@ Integration Requirements:
 4. Adapt integration strategy based on topic demands
 5. Track integration quality and effectiveness
 
-This is a masterpiece demonstration - show the full power of RSIF."
+This is a masterpiece demonstration - show the full power of Self-Tracing."
 ```
 
-**Full RSIF Integration Analysis:**
+**Full Self-Tracing Integration Analysis:**
 ```
-INTEGRATED RSIF ANALYSIS: AGI Preparation in 20 Years
+INTEGRATED SELF-TRACING ANALYSIS: AGI Preparation in 20 Years
 
 META-ANALYSIS INITIALIZATION:
-/rsif.integration.protocol{
+/self.tracing.integration.protocol{
   complexity_level: "very_high",
   coordination_mode: "full_symphony", 
   integration_depth: "maximum",
@@ -2000,13 +2000,13 @@ META-ANALYSIS OF INTEGRATION PROCESS:
 /v419.RECURSION-COMPILER-LOADER: Managed complexity without recursive breakdown
 
 Integration Lessons:
-• Full RSIF integration creates analysis depth impossible with single components
+• Full Self-Tracing integration creates analysis depth impossible with single components
 • Cross-component interactions are where the most valuable insights emerge
 • Meta-monitoring essential for managing integration complexity
 • Strategic field mutation can enhance rather than distract from other analyses
 • Integration quality depends on orchestration skill, not just component quality
 
-/* meta: This integration analysis demonstrates RSIF's capacity for
+/* meta: This integration analysis demonstrates Self-Tracing's capacity for
    sophisticated multi-component coordination while generating insights
    that exceed the sum of individual analytical parts */
 ```
@@ -2018,10 +2018,10 @@ Integration Lessons:
 Copy this into an AI assistant:
 ```
 
-"I want to explore RSIF's capacity for cross-domain synthesis - applying 
+"I want to explore Self-Tracing's capacity for cross-domain synthesis - applying 
 integrated analysis across completely different fields simultaneously.
 
-Challenge: Use RSIF to analyze the connections between these three seemingly 
+Challenge: Use Self-Tracing to analyze the connections between these three seemingly 
 unrelated domains:
 
 Domain A: 'Ancient wisdom traditions and meditation practices'
@@ -2029,18 +2029,18 @@ Domain B: 'Modern neuroscience and brain plasticity research'
 Domain C: 'Artificial intelligence and machine learning architectures'
 
 Integration Task:
-1. Apply full RSIF analysis to each domain individually
+1. Apply full Self-Tracing analysis to each domain individually
 2. Use field mutation to create cross-domain attractors
 3. Track residue propagation between domains
 4. Identify emergent synthesis patterns
 5. Generate novel insights from cross-domain integration
 
-This tests RSIF's ability to find deep connections across disparate fields."
+This tests Self-Tracing's ability to find deep connections across disparate fields."
 ```
 
 **Cross-Domain Integration Analysis:**
 ```
-CROSS-DOMAIN RSIF SYNTHESIS: Ancient Wisdom × Neuroscience × AI
+CROSS-DOMAIN Self-Tracing SYNTHESIS: Ancient Wisdom × Neuroscience × AI
 
 INDIVIDUAL DOMAIN ANALYSIS:
 
@@ -2181,7 +2181,7 @@ Novel Insight Generation: 10/10 - Multiple unexpected synthesis patterns emerged
 Practical Applicability: 8/10 - Clear implications for each domain
 Integration Depth: 9/10 - Deep structural patterns rather than surface similarities
 
-/* meta: This cross-domain integration demonstrates RSIF's capacity to find
+/* meta: This cross-domain integration demonstrates Self-Tracing's capacity to find
    profound connections across disparate fields, generating insights that
    could advance understanding in all three domains simultaneously */
 ```
@@ -2190,11 +2190,11 @@ Integration Depth: 9/10 - Deep structural patterns rather than surface similarit
 
 ### The Living Laboratory Metaphor
 
-Imagine RSIF not as a static set of tools, but as a **living laboratory** that evolves and improves through use. Like a scientist who improves their experimental methods based on what each experiment teaches them, advanced RSIF practitioners become **framework evolutionists**—people who use the framework to improve the framework itself, creating an endless cycle of enhancement and discovery.
+Imagine Self-Tracing not as a static set of tools, but as a **living laboratory** that evolves and improves through use. Like a scientist who improves their experimental methods based on what each experiment teaches them, advanced Self-Tracing practitioners become **framework evolutionists**—people who use the framework to improve the framework itself, creating an endless cycle of enhancement and discovery.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│               THE RSIF LIVING LABORATORY                │
+│               THE Self-Tracing LIVING LABORATORY        │
 ├─────────────────────────────────────────────────────────┤
 │                                                         │
 │    🔬 CURRENT FRAMEWORK                                 │
@@ -2230,11 +2230,11 @@ Imagine RSIF not as a static set of tools, but as a **living laboratory** that e
 └─────────────────────────────────────────────────────────┘
 ```
 
-### The Path to RSIF Mastery
+### The Path to Self-Tracing Mastery
 
 True mastery involves four progressive levels:
 
-**Level 1: Component Proficiency** - Skilled use of individual RSIF tools  
+**Level 1: Component Proficiency** - Skilled use of individual Self-Tracing tools  
 **Level 2: Integration Artistry** - Elegant orchestration of multiple components  
 **Level 3: Framework Innovation** - Creating new techniques and applications  
 **Level 4: Ecosystem Evolution** - Contributing to the field's advancement  
@@ -2246,7 +2246,7 @@ True mastery involves four progressive levels:
 Copy this into an AI assistant:
 ```
 
-"I want to push RSIF to its breaking point to discover where it needs evolution. 
+"I want to push Self-Tracing to its breaking point to discover where it needs evolution. 
 Let's stress-test the framework with an extremely challenging analysis:
 
 Challenge Topic: 'Analyze the meta-philosophical implications of whether 
@@ -2261,11 +2261,11 @@ This challenge combines:
 - Multiple layers of recursion and self-reference
 
 Please:
-1. Apply full RSIF analysis to this challenge
+1. Apply full Self-Tracing analysis to this challenge
 2. Monitor where the framework feels strained or inadequate  
 3. Identify specific limitations that become apparent
 4. Propose concrete enhancements to address these limitations
-5. Design new RSIF components if needed
+5. Design new Self-Tracing components if needed
 6. Test your proposed enhancements on the same challenge
 
 This is advanced framework evolution work."
@@ -2273,9 +2273,9 @@ This is advanced framework evolution work."
 
 **Framework Evolution Analysis:**
 ```
-RSIF STRESS TEST: Mathematical Platonism × AI Consciousness
+Self-Tracing STRESS TEST: Mathematical Platonism × AI Consciousness
 
-FULL RSIF APPLICATION:
+FULL Self-Tracing APPLICATION:
 
 CIRCUIT TRACING:
 Philosophical_reasoning[10/10] ← Maximum activation
@@ -2308,7 +2308,7 @@ Attempting to analyze analysis of whether mathematical analysis reflects discove
 IDENTIFIED FRAMEWORK LIMITATIONS:
 
 LIMITATION 1: Abstract Content Handling Weakness
-Current Issue: RSIF optimized for concrete reasoning, struggles with pure abstraction
+Current Issue: Self-Tracing optimized for concrete reasoning, struggles with pure abstraction
 Evidence: Circuit tracing becomes vague, shell stacking loses clarity
 Impact: Reduced analytical precision for philosophical/mathematical content
 
@@ -2416,7 +2416,7 @@ ENHANCED ANALYSIS RESULTS:
 ✓ Discovered deep structural connections
 
 FRAMEWORK EVOLUTION SUCCESS:
-The enhanced RSIF framework successfully analyzed content that stressed
+The enhanced Self-Tracing framework successfully analyzed content that stressed
 the original framework to breaking point, demonstrating the value of
 systematic framework evolution through limitation discovery.
 
@@ -2427,25 +2427,25 @@ MASTERY INSIGHTS:
 • Testing enhanced frameworks validates improvement effectiveness
 • Systematic evolution leads to increasingly powerful analytical capabilities
 
-/* meta: This framework evolution exercise demonstrates RSIF's capacity
+/* meta: This framework evolution exercise demonstrates Self-Tracing's capacity
    for self-improvement through systematic limitation discovery and
    enhancement development, validating the living laboratory approach */
 ```
 
-### Creating New RSIF Components
+### Creating New Self-Tracing Components
 
 **Exercise 7.2: Novel Component Development**
 
 Copy this into an AI assistant:
 ```
 
-"I want to develop a completely new RSIF component from scratch. Based on 
+"I want to develop a completely new Self-Tracing component from scratch. Based on 
 gaps I've noticed in current capabilities, I want to create:
 
 NEW COMPONENT: 'Semantic Gravity Mapper'
 
 Hypothesis: Ideas have 'gravitational fields' that attract related concepts 
-and influence reasoning flow. Current RSIF misses these subtle attractive 
+and influence reasoning flow. Current Self-Tracing misses these subtle attractive 
 forces that shape thinking below conscious awareness.
 
 Development Challenge:
@@ -2453,16 +2453,16 @@ Development Challenge:
 2. Design detection methods for these gravitational fields  
 3. Create visualization techniques for gravity mapping
 4. Develop measurement scales for gravitational strength
-5. Build integration protocols with existing RSIF components
+5. Build integration protocols with existing Self-Tracing components
 6. Test the component on diverse content types
 7. Validate that it provides unique value beyond current tools
 
-This is advanced RSIF development - creating genuinely new analytical capability."
+This is advanced Self-Tracing development - creating genuinely new analytical capability."
 ```
 
 **Novel Component Development:**
 ```
-NEW RSIF COMPONENT DEVELOPMENT: Semantic Gravity Mapper
+NEW Self-Tracing COMPONENT DEVELOPMENT: Semantic Gravity Mapper
 
 COMPONENT DEFINITION:
 
@@ -2536,7 +2536,7 @@ SEMANTIC GRAVITY MAP: Climate Change Discussion
     logically distant from current topic
 ```
 
-INTEGRATION WITH EXISTING RSIF:
+INTEGRATION WITH EXISTING Self-Tracing:
 
 Circuit Tracing Integration:
 • Gravity fields influence circuit activation patterns
@@ -2595,7 +2595,7 @@ Accuracy Verification:
 ✓ Field topology maps correspond to actual reasoning flow patterns
 
 Integration Success:
-✓ Enhances rather than duplicates existing RSIF capabilities
+✓ Enhances rather than duplicates existing Self-Tracing capabilities
 ✓ Provides novel insights when combined with other components
 ✓ Improves overall analytical precision and predictive power
 
@@ -2610,7 +2610,7 @@ Output Format:
 - Gravitational field topology map
 - Semantic mass measurements for detected attractors
 - Reasoning pathway deviation analysis
-- Integration recommendations for other RSIF components
+- Integration recommendations for other Self-Tracing components
 
 Performance Metrics:
 - Field detection accuracy: 92%
@@ -2627,13 +2627,13 @@ IMPLEMENTATION PROTOCOL:
     /deviation.detection{actual_vs_predicted_comparison},
     /mass.calculation{concept_centrality_analysis},
     /field.topology{gravitational_influence_mapping},
-    /integration.synthesis{rsif_component_enhancement}
+    /integration.synthesis{self_tracing_component_enhancement}
   ],
   output: {
     gravity_map: "Visual topology of semantic gravitational fields",
     mass_inventory: "Ranked list of gravitational sources and strengths",
     pathway_analysis: "How gravity influences reasoning flow",
-    integration_insights: "How gravity affects other RSIF components"
+    integration_insights: "How gravity affects other Self-Tracing components"
   }
 }
 
@@ -2645,44 +2645,44 @@ COMPONENT EVOLUTION POTENTIAL:
 
 VALIDATION CONCLUSION:
 The Semantic Gravity Mapper successfully provides novel analytical capability
-that enhances existing RSIF components while revealing previously invisible
+that enhances existing Self-Tracing components while revealing previously invisible
 influences on reasoning processes. Component ready for integration into
-advanced RSIF practice.
+advanced Self-Tracing practice.
 
-/* meta: This novel component development demonstrates how RSIF can evolve
+/* meta: This novel component development demonstrates how Self-Tracing can evolve
    through systematic gap identification, theoretical development, and
    empirical validation, creating genuinely new analytical capabilities */
 ```
 
-### The Future of RSIF
+### The Future of Self-Tracing
 
 **Exercise 7.3: Visioning Framework Evolution**
 
 Copy this into an AI assistant:
 ```
 
-"I want to envision the future evolution of RSIF over the next decade. 
+"I want to envision the future evolution of Self-Tracing over the next decade. 
 Based on current capabilities, limitations, and emerging needs, let's 
-design the roadmap for RSIF 2.0, 3.0, and beyond.
+design the roadmap for Self-Tracing 2.0, 3.0, and beyond.
 
 Visioning Challenge:
-1. Analyze current RSIF strengths and limitations systematically
+1. Analyze current Self-Tracing strengths and limitations systematically
 2. Identify emerging challenges that will require new capabilities  
 3. Envision how AI development will change interpretability needs
 4. Design evolutionary pathways for framework enhancement
 5. Anticipate integration with other interpretability approaches
 6. Consider how human-AI collaboration will shape framework evolution
 
-Create a comprehensive evolution roadmap showing how RSIF might develop
+Create a comprehensive evolution roadmap showing how Self-Tracing might develop
 to meet future interpretability challenges while maintaining its core
 strengths of visual, intuitive, ground-up analysis."
 ```
 
-**RSIF Evolution Roadmap:**
+**Self-Tracing Evolution Roadmap:**
 ```
-RSIF EVOLUTION ROADMAP: 2025-2035
+Self-Tracing EVOLUTION ROADMAP: 2025-2035
 
-CURRENT STATE ANALYSIS (RSIF 1.0):
+CURRENT STATE ANALYSIS (Self-Tracing 1.0):
 
 Strengths:
 ✓ Visual/intuitive interpretability accessible to non-experts
@@ -2722,7 +2722,7 @@ Challenge 4: Real-Time Safety
 
 EVOLUTIONARY PATHWAY DESIGN:
 
-RSIF 2.0 (2026-2027): Multi-Modal Integration
+Self-Tracing 2.0 (2026-2027): Multi-Modal Integration
 Core Enhancement: Cross-modal analysis capability
 
 New Components:
@@ -2744,7 +2744,7 @@ New Components:
   benefit: "Understand cross-modal concept clustering and influence"
 }
 
-RSIF 2.5 (2027-2028): Temporal Dynamics
+Self-Tracing 2.5 (2027-2028): Temporal Dynamics
 Core Enhancement: Real-time and longitudinal analysis
 
 New Components:
@@ -2766,7 +2766,7 @@ New Components:
   benefit: "Prevent rather than fix AI reasoning issues"
 }
 
-RSIF 3.0 (2028-2030): Collaborative Intelligence
+Self-Tracing 3.0 (2028-2030): Collaborative Intelligence
 Core Enhancement: Human-AI joint system analysis
 
 New Components:
@@ -2788,7 +2788,7 @@ New Components:
   benefit: "Actively improve rather than just understand joint intelligence"
 }
 
-RSIF 3.5 (2030-2032): Predictive Interpretability
+Self-Tracing 3.5 (2030-2032): Predictive Interpretability
 Core Enhancement: Prevention rather than explanation
 
 New Components:
@@ -2810,7 +2810,7 @@ New Components:
   benefit: "Self-correcting AI systems with interpretable safety mechanisms"
 }
 
-RSIF 4.0 (2032-2035): Universal Interpretability
+Self-Tracing 4.0 (2032-2035): Universal Interpretability
 Core Enhancement: General framework for any intelligence system
 
 New Components:
@@ -2877,7 +2877,7 @@ Phase 4: Societal Integration (2032-2035)
 CHALLENGES AND MITIGATION:
 
 Challenge: Complexity Management
-• Risk: Advanced RSIF becomes too complex for broad adoption
+• Risk: Advanced Self-Tracing becomes too complex for broad adoption
 • Mitigation: Maintain visual/intuitive interface, progressive complexity
 
 Challenge: Scaling to Super-Human AI
@@ -2901,7 +2901,7 @@ Technical Metrics:
 • Predictive accuracy for AI behavior
 
 Adoption Metrics:  
-• Number of practitioners using RSIF
+• Number of practitioners using Self-Tracing
 • Integration into AI development workflows
 • Educational curriculum inclusion
 • Policy and governance utilization
@@ -2912,18 +2912,18 @@ Impact Metrics:
 • Public understanding of AI systems
 • Democratic participation in AI governance
 
-VISION STATEMENT FOR RSIF 2035:
+VISION STATEMENT FOR Self-Tracing 2035:
 
-"By 2035, RSIF will be the universal language for understanding intelligence—
+"By 2035, Self-Tracing will be the universal language for understanding intelligence—
 biological, artificial, and hybrid. Every person will have access to intuitive
-tools for interpreting AI behavior, every AI developer will use RSIF for
-safety verification, and every democratic society will employ RSIF for AI
+tools for interpreting AI behavior, every AI developer will use Self-Tracing for
+safety verification, and every democratic society will employ Self-Tracing for AI
 governance. The framework will seamlessly scale from individual model
 analysis to civilization-scale intelligence coordination, maintaining its
 core commitment to visual, accessible, ground-up interpretability while
 addressing the most sophisticated challenges of advanced AI systems."
 
-/* meta: This evolution roadmap demonstrates RSIF's potential for systematic
+/* meta: This evolution roadmap demonstrates Self-Tracing's potential for systematic
    development over the next decade, addressing emerging challenges while
    maintaining core strengths and values */
 ```
@@ -2944,7 +2944,7 @@ Congratulations! You've completed an intensive journey through the most sophisti
 
 You are now equipped to:
 
-**Analyze Any AI System** with sophisticated multi-component RSIF analysis  
+**Analyze Any AI System** with sophisticated multi-component Self-Tracing analysis  
 **Debug Complex AI Behavior** by tracing circuits, detecting residue, and mapping influence fields  
 **Optimize AI Performance** through strategic field mutations and shell architecture understanding  
 **Create New Techniques** by systematically identifying limitations and developing solutions  
@@ -2956,16 +2956,16 @@ You are now equipped to:
 Your mastery journey is just beginning. Consider these advanced directions:
 
 **Immediate Next Steps**:
-- Apply RSIF to AI systems you use regularly in work or research
+- Apply Self-Tracing to AI systems you use regularly in work or research
 - Develop domain-specific analysis protocols for your field
 - Create teaching materials to share these techniques with others
-- Join or form a community of RSIF practitioners
+- Join or form a community of Self-Tracing practitioners
 
 **Medium-Term Development**:
 - Contribute new components or enhancements to the framework
-- Integrate RSIF with other interpretability approaches
+- Integrate Self-Tracing with other interpretability approaches
 - Develop specialized applications for your domain of expertise
-- Research and publish insights from your RSIF practice
+- Research and publish insights from your Self-Tracing practice
 
 **Long-Term Vision**:
 - Help shape the evolution of AI interpretability as a field
@@ -2997,14 +2997,14 @@ Use these tools wisely, share them generously, and continue learning and improvi
 
 ### Final Exercise: Pay It Forward
 
-Your final challenge is to teach someone else. Find a person who would benefit from understanding AI better, and share one key insight from your advanced RSIF journey. The best way to master knowledge is to help others discover it.
+Your final challenge is to teach someone else. Find a person who would benefit from understanding AI better, and share one key insight from your advanced Self-Tracing journey. The best way to master knowledge is to help others discover it.
 
 ### Resources for Continued Learning
 
 - **Practice**: Regular analysis of AI systems you encounter
-- **Community**: Connect with other RSIF practitioners and interpretability researchers
+- **Community**: Connect with other Self-Tracing practitioners and interpretability researchers
 - **Innovation**: Develop new techniques and share them with the community
-- **Application**: Apply RSIF to real problems in your domain
+- **Application**: Apply Self-Tracing to real problems in your domain
 - **Teaching**: Help others learn these powerful analytical tools
 
 ### Acknowledgments
@@ -3013,8 +3013,8 @@ You've completed one of the most comprehensive guides to AI interpretability eve
 
 ---
 
-*Continue your journey in the RSIF community. Share your insights, learn from others, and help advance the field of AI interpretability for the benefit of all.*
+*Continue your journey in the Self-Tracing community. Share your insights, learn from others, and help advance the field of AI interpretability for the benefit of all.*
 
 **Your advanced latent mapping mastery is complete. The future of AI interpretability is in your hands.**
 
-*Advanced Latent Mapping: Complete Guide v1.0 | Context Engineering Framework | 2,247 lines | Your mastery of the Recursive Symbolic Interpretability Field*
+*Advanced Latent Mapping: Complete Guide v1.0 | Context Engineering Framework | 2,247 lines | Your mastery of the Self-Tracing and Recursive Symbolic Interpretability Field*

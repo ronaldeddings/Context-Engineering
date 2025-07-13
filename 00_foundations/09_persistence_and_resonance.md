@@ -164,7 +164,7 @@ One of the most powerful properties of neural fields is their ability to form **
     B1, B2: Boundary States
 ```
 
-As described in the IBM paper, these attractors serve as cognitive frameworks that organize information:
+As described in the IBM paper, these cognitive tools serve as structural attractors that organize information:
 
 > "For instance, providing our “cognitive tools” to GPT-4.1 increases its pass@1 performance on AIME2024 from 26.7% to 43.3%, bringing it very close to the performance of o1-preview." — [IBM June 2025](https://www.arxiv.org/pdf/2506.12115) 
 >
